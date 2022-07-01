@@ -1,0 +1,602 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Foodang.com</title>
+	
+	<link href="https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@400;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+	<link rel="stylesheet" href="magnific/magnific-popup.css">
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<style>
+	
+	*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+
+	font-family: 'Baloo Chettan 2', cursive;
+	line-height: 1.5;
+}
+
+.title-text{
+	font-size: 40px;
+	text-align: center;
+}
+
+/*Header*/
+.header{
+	min-height: 100vh;
+	background: 
+	url(images/home.jpg) center/cover no-repeat fixed;
+	margin-top: auto;
+}
+.hero{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	background-attachment: fixed;
+	width: 100%;
+	height: 100%;
+}
+.hero .title{
+	color: #fff;
+	font-size: 50px;
+}
+.hero-button{
+	display: inline-block;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 13px 20px;
+	border-radius: 200px;
+	font-weight: bold;
+	background: orange;
+	color: #fff;
+	cursor: pointer;
+	border: 2px solid orange;
+	margin-top: 10px;
+}
+
+.hero-button:hover{
+	background: #fff;
+	color: orange;
+	border: none;
+}
+.pulsate{
+	animation: pulsate 3s ease-in-out;
+	animation-iteration-count: infinite;
+	opacity: .3;
+	color: #000;
+}
+
+@-webkit-keyframes pulsate{
+	0%{
+		opacity: .3;
+	}
+	50%{
+		opacity: 1;
+	}
+	100%{
+		opacity: .3;
+	}
+}
+
+/*About us*/
+
+.about{
+	padding-bottom: 40px;
+}
+
+.about .card{
+	border: 0;
+	padding: 0 30px;
+	margin-bottom: 60px;
+	position: relative;
+	background: transparent;
+}
+
+.about .card-img{
+	width: calc(100% + 60px);
+	margin-left: -30px;
+	overflow: hidden;
+	z-index: 9;
+	border-radius: 0;
+}
+
+.about .card-img img{
+	max-width: 100%;
+	transition: all 0.3s ease-in-out;
+}
+
+.about .card-body{
+	z-index: 10;
+	background: orange;
+	border-top: 4px solid #f08902;
+	padding: 40px;
+	box-shadow: 0px 2px 15px rgba(241, 159, 5, 0.5);
+	margin-top: -60px;
+	transition: 0.3s;
+
+}
+
+.about .card-title{
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.about .card-title{
+	color: #000;
+	transition: 0.3s;
+}
+
+.about .card-text{
+	color: #000;
+}
+
+.about .card:hover img{
+	transform: scale(1.1);
+}
+
+.about .card:hover .card-body{
+	border-color: orange;
+}
+
+.about .card:hover .card-body .card-title a{
+	color: #854101;
+}
+
+/*Menu*/
+.menu-image{
+	min-height: 80vh;
+	background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.4)), url(images/sekuwa.jpg)center/cover fixed no-repeat;
+}
+.menu-text{
+	min-height: 80vh;
+	align-items: center;
+	background: skyblue;
+	columns: #000;
+	padding: 50px 0;
+}
+.menu-text-center{
+	width: 90%;
+	margin: 0 auto;
+}
+.menu-text h1{
+	font-size: 40px;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+}
+.menu-text p{
+	margin: 20px 0;
+	line-height: 2;
+}
+.menu-text a{
+	display: inline-block;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 13px 20px;
+	border-radius: 200px;
+	font-weight: bold;
+	background: rgba(10,10,10);
+	color: orange;
+	border: 2px solid #000;
+}
+.menu-text a:hover{
+	color: orange;
+	background: #fff;
+	border: none;
+}
+@media screen and (min-width: 776px){
+	.menu{
+		display: flex;
+	}
+	.menu-text{
+		flex: 0 0 30%;
+	}
+	.menu-image{
+		flex: 0 0 70%;
+		clip-path: polygon(0 0, 100% 0, 50% 100%, 0 100%);
+	}
+	.menu{
+		background: skyblue;
+	}
+}
+
+/*Social icon*/
+#social-icons{
+	height: 150px;
+	background: #fff;
+	text-align: center;
+	padding: 50px 0 50px 0;
+}
+#social-icons a{
+	display: inline-block;
+	padding: 5px 10px;
+	margin: 0 5px;
+	font-size: 40px;
+	border-radius: 5px;
+	transition: transform 2s ease, color 2s ease;
+}
+#social-icons a:hover{
+	transform: translateY(-20px);
+
+}
+.facebook{
+	color: #3b5998;
+}
+.twitter{
+	color: #38a1f3;
+}
+.instagram{
+	color: #e1306c;
+}
+.plus{
+	color: #db4a39;
+}
+
+
+
+/*Cards*/
+#food{
+	padding: 20px;
+}
+
+.food-container{
+	max-width: 90vw;
+	margin: 0 auto;
+}
+
+.food-card{
+	position: relative;
+	background: linear-gradient(rgba(247, 244, 242, 0.7), rgba(247, 245, 244, 0.7));
+	margin: 20px 0;
+	color: black;
+	overflow: hidden;
+	padding: 3px;
+	border-radius: 16px;
+	border: 1px solid white;
+	box-shadow: 2px 3px 1px 1px white;
+}
+
+#food img{
+	width: 100%;
+	min-height: 100%;
+	display: block;
+	transition: transform 4s;
+}
+
+.img-text{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	text-align: center;
+	opacity: 0;
+	transition: opacity 4s;
+}
+
+.img-footer{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	padding: 10px;
+	font-size: 20px;
+	opacity: 0;
+	color: #000;
+	transition: opacity 4s;
+}
+
+.img-text h1{
+	font-size: 30px;
+	margin-bottom: 10px;
+}
+   
+.food-card:hover img{
+	opacity: 0.4;
+	transition: scale(1.3);
+
+}
+
+.food-card:hover .img-text,
+.food-card:hover .img-footer{
+	opacity: 1;
+}
+
+.food-btn{
+	display: inline-block;
+	background: #000;
+	text-decoration: none;
+	text-transform: capitalize;
+	padding: 12px 32px;
+	color: #fff;
+	font-weight: bold;
+	border-radius: 150px;
+	cursor: pointer;
+	margin-top: 12px;
+	transition: all 0.3s ease-in-out;
+	font-size: 18px;
+	outline: none;
+}
+
+.food-btn:hover{
+	color: orange;
+	background: #fff;
+	border: #000;
+	outline: none;
+}
+
+.fas{
+	font-size: 25px;
+}
+
+@media screen and (min-width: 576px){
+	.food-container{
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-column-gap: 16px;
+	}
+}
+
+@media screen and (min-width: 992px){
+	.food-container{
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-column-gap: 16px;
+	}
+}
+
+
+#footer{
+	background: #111;
+	font-family: "open sans";
+	padding-top: 20px;
+	color: #fff;
+
+}
+
+.footer-content{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+}
+
+.footer-content h3{
+	font-size: 2.8rem;
+	font-weight: 400;
+	text-transform: capitalize;
+	
+}
+
+.footer-content p{
+	max-width: 500px;
+	margin: 15px auto;
+	font-size: 14px;
+}
+
+.footer-bottom{
+	background: #000;
+	text-align: capitalize;
+}
+
+.footer-bottom p{
+	font-size: 15px;
+	word-spacing: 2px;
+	text-transform: capitalize;
+	
+}
+
+
+</style>
+
+
+	<!--Header-->
+	<header class="header">
+		
+		<!--Navbar-->
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Foodang.Com</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li><a href="#about">About US</a></li>
+      <li><a href="#menu">Services</a></li>
+      <li><a href="#food">Menu</a></li>
+      <li><a href="#footer">Contact US</a></li>
+  </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+	  <li><a href="{% url 'register' %}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+		<div class="hero">
+			<h1 class="title">Good Food Good Life</h1>
+			<a href="{% url 'login' %}" class="hero-button pulsate">Order Now</a>
+
+		</div>
+		
+	</header>
+
+
+<!--About us-->
+<section id="about" class="about pt-4">
+	<div class="container">
+		<div class="section-title">
+			<h2 class="text-center font-weight-bold">About Us</h2>
+			<p><span>Foodang</span> is a place where cooked food is sold to the public, and where people sit down to eat it. It is also a place where people go to enjoy the time and to eat a meal. Some restaurants are a chain, meaning that there are restaurants which have the same name and serve the same food.</p>
+			
+		</div>
+		<div class="row">
+			<div class="col-md-6 d-flex align-items-stretch">
+				<div class="card">
+					<div class="card-img">
+						<img src="images/momos.jpg" alt="">
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">
+							
+						</h5>
+						<p class="card-text">
+							A restaurant is a place where cooked food is sold to the public, and where people sit down to eat it. It is also a place where people go to enjoy the time and to eat a meal. Some restaurants are a chain, meaning that there are restaurants which have the same name and serve the same food.
+						</p>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="col-md-6 d-flex align-items-stretch">
+				<div class="card">
+					<div class="card-img">
+						<img src="images/pizza.jpg" alt="">
+					</div>
+					<div class="card-body">
+						<h5 class="card-title">
+							
+						</h5>
+						<p class="card-text">
+							Some restaurants are a chain, meaning that there are restaurants which have the same name and serve the same food. A restaurant is a place where cooked food is sold to the public. It is also a place where people go to enjoy the time and to eat a meal. So, do visite Foodang for good food. 
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+
+
+
+
+<!--Services section-->
+
+<section class="menu" id="menu">
+	<article class="menu-image"></article>
+	<article class="menu-text">
+		<div class="menu-text-center">
+			<h1>Services</h1>
+			<p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation. " </p>
+			<a href="#">Explore</a>
+		</div>
+	</article>
+</section>
+
+
+
+<!--Menu card-->
+<section id="food">
+	<div>
+		<h2 class="title-text">Food Menu</h2>
+	</div>
+	<div class="food-container">
+		<!--Article-->
+		<article class="food-card">
+			<img src="images/Mixed_Chowmin.jpg" class="food.img" alt="">
+			<div class="img-text">
+				<h1>Breakfast</h1>
+			</div>
+			<div class="img-footer">
+				<div class="footer-item">
+					<i class="fas">Rs. 25</i>
+				</div>
+				<div class="footer-btn">
+					<button type="button" class="food-btn">Order Now</button>
+				</div>
+			</div>
+		</article>
+
+		<!--Article-->
+		<article class="food-card">
+			<img src="images/Noodels.jpg" class="food.img" alt="">
+			<div class="img-text">
+				<h1>Lunch</h1>
+			</div>
+			<div class="img-footer">
+				<div class="footer-item">
+					<i class="fas">Rs. 25</i>
+				</div>
+				<div class="footer-btn">
+					<button type="button" class="food-btn">Order Now</button>
+				</div>
+			</div>
+		</article>
+
+		<!--Article-->
+		<article class="food-card">
+			<img src="images/burger.jpg" class="food.img" alt="">
+			<div class="img-text">
+				<h1>Dinner</h1>
+			</div>
+			<div class="img-footer">
+				<div class="footer-item">
+					<i class="fas">Rs. 25</i>
+				</div>
+				<div class="footer-btn">
+					<button type="button" class="food-btn">Order Now</button>
+				</div>
+			</div>
+		</article>
+
+	</div>
+
+
+
+</section>
+
+
+<!--Social Icon-->
+
+<section id="social-icons">
+	<a href="#"><i class="fab fa-facebook faceook"></i></a>
+	<a href="#"><i class="fab fa-twitter twitter"></i></a>
+	<a href="#"><i class="fab fa-instagram instagram"></i></a>
+	<a href="#"><i class="fab fa-google-plus plus"></i></a>
+</section>
+
+
+<section id ="footer">
+	<div class="footer-content" >
+		<h3><a href="#">Contact Us</a></h3>
+		<p>Did you know there is something you can do that will make both you & the planet healthier? <br>Email: sunil.dangol1998@gmail.com <br>Ph No: 9803032797, 9823551785</p>
+		
+		<div class="footer-bottom">
+			
+			<p>copyright &copy;2020 Foodang.com.</p>
+		</div>
+	</div>
+
+</section>
+
+	
+
+
+
+<script src="magnific/magnific.js"></script>
+<!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="magnific/jquery.magnific-popup.min.js"></script>
+<script src="onClickMenu.js"></script>
+</body>
+</html>

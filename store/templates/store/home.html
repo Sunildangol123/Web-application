@@ -1,0 +1,109 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<style>
+#footer{
+	background: #111;
+	font-family: "open sans";
+	padding-top: 20px;
+	color: #fff;
+
+}
+
+.footer-content{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+}
+
+.footer-content h3{
+	font-size: 2.8rem;
+	font-weight: 400;
+	text-transform: capitalize;
+	
+}
+
+.footer-content p{
+	max-width: 500px;
+	margin: 15px auto;
+	font-size: 14px;
+}
+
+.footer-bottom{
+	background: rgb(146, 136, 136);
+	text-align: capitalize;
+}
+
+.footer-bottom p{
+	font-size: 15px;
+	word-spacing: 2px;
+	text-transform: capitalize;
+	
+}
+</style>
+
+<div class="row">
+     {% for product in products %}
+	<div class="col-lg-4">
+          <img class="thumbnail" src="{{product.image.url}}">
+		<div class="box-element product">
+               <h5><strong>{{product.name}}</strong></h5>
+               <hr>
+               <button  data-product={{product.id}} data-action="add" class="btn btn-outline-primary add-btn update-cart">Add Order</button>
+               <a class="btn btn-outline-success" href="#">Quality</a>
+               <h4 style="display: inline-block; float: right"><strong>Rs.{{product.price|floatformat:2}}</strong>
+
+		</div>
+     </div>
+     {% endfor %}
+     
+     
+</div>
+<nav aria-label="...">
+     <ul class="pagination p-1" >
+          {% if products.has_previous %}
+       <li class="page-item">
+         <a class="page-link" href="?page={{ products.previous_page_number }}">Previous</a>
+       </li>
+       {% else %}
+       <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1">Previous</a>
+        </li>
+       {% endif %}
+
+       {% for i in products.paginator.page_range %}
+       {% if i == products.number %}
+       <li class="page-item active"><a class="page-link">{{i}}</a></li>
+       {% else %}
+       <li class="page-item"><a class="page-link" href="?page={{i}}">{{i}}</a></li>
+       {% endif %}
+       {% endfor %}
+      
+       
+       {% if products.has_next %}
+       <li class="page-item">
+         <a class="page-link" href="?page={{ products.next_page_number }}">Next</a>
+       </li>
+       {% else %}
+       <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1">Next</a>
+        </li>
+       {% endif %}
+       
+     </ul>
+   </nav>
+   
+   <section id ="footer">
+    <div class="footer-content" >
+      <h3><a href="#">Contact Us</a></h3>
+      <p>Did you know there is something you can do that will make both you & the planet healthier? <br>Email: sunil.dangol1998@gmail.com <br>Ph No: 9803032797, 9823551785</p>
+      
+      <div class="footer-bottom">
+        
+        <p>copyright &copy;2020 Foodang.com.</p>
+      </div>
+    </div>
+  
+  </section>
+{% endblock content %}
